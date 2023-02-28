@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "/Users/jkosinski/Projects/MySpot/src/MySpot.Api/MySpot.Api.csproj",
-        "projectName": "MySpot.Api",
+        "projectName": "myspot.api",
         "projectPath": "/Users/jkosinski/Projects/MySpot/src/MySpot.Api/MySpot.Api.csproj",
         "packagesPath": "/Users/jkosinski/.nuget/packages/",
         "outputPath": "/Users/jkosinski/Projects/MySpot/src/MySpot.Api/obj/",
@@ -67,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.200/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R6hdgZ/k17eU0xCDu8gaDrVgH7xC1yi9Jt0MWsTPfS/z/YvAo8S54dePsSV9XxxBxuWoKNZgPYhAtXezn802MA==",
+  "dgSpecHash": "Ch+ffGnu+Ijjm9oGvLeRgZaWCxU+zSlZ4276zI9uEwjpGKjZ34z5/weVQCcVNCt5QNQyM4+h60CYsXBSAZVTHA==",
   "success": true,
-  "projectFilePath": "/Users/jkosinski/Projects/MySpot/src/MySpot.Api/MySpot.Api.csproj",
+  "projectFilePath": "/Users/jkosinski/Projects/MySpot/src/myspot.api/myspot.api.csproj",
   "expectedPackageFiles": [
     "/Users/jkosinski/.nuget/packages/microsoft.aspnetcore.openapi/7.0.1/microsoft.aspnetcore.openapi.7.0.1.nupkg.sha512",
     "/Users/jkosinski/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
