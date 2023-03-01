@@ -21,16 +21,15 @@ public class ReservationsController : ControllerBase
        var reservation =  Reservations.SingleOrDefault(x => x.Id == id);
        if (reservation is null)
        {
-           HttpContext.Response.StatusCode = StatusCodes.Status404NotFound;
-           return default;
+           return NotFound();
        }
 
-       return reservation;
+       return Ok(reservation);
     } 
     
     
     [HttpGet]
-    public IEnumerable<Reservation> GetAll() => Reservations;
+    public ActionResult<IEnumerable<Reservation>> GetAll() => Ok(Reservations);
 
     // public int? Create(Reservation reservation)
     // {
@@ -45,7 +44,7 @@ public class ReservationsController : ControllerBase
     {
         if (parkingSpotNames.All(x => x != reservation.ParkingSpotName))
         {
-            HttpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
+           
             return BadRequest();
         }
 
@@ -64,7 +63,19 @@ public class ReservationsController : ControllerBase
         reservation.Id = _id;
         Reservations.Add(reservation);
         _id++;
-        return Ok();
+        return CreatedAtAction(nameof(Get),new {id = reservation.Id});
+    }
+    [HttpPut("{id:int}")]
+    public ActionResult Put(int id, Reservation reservation)
+    {
+       var existingReservation =  Reservations.SingleOrDefault(x => x.Id == id);
+       if (existingReservation is null)
+       {
+           return NotFound();
+       }
+
+       existingReservation.LicensePlate = reservation.LicensePlate;
+       return NoContent();
     }
 
 }
