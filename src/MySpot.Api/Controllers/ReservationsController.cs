@@ -64,6 +64,7 @@ public class ReservationsController : ControllerBase
         reservation.Id = _id;
         Reservations.Add(reservation);
         _id++;
+        return Ok();
     }
 
 }

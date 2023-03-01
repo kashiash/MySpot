@@ -13,7 +13,7 @@ Content-Type: application/json
 
 {
     "employeeName" : "Sam Wiesz Kto",
-    "parkingSpotName": "P1",
+    "parkingSpotName": "P3",
     "licensePlate": "DUPEK",
     "date": "2023-02-05"
 }
@@ -27,4 +27,15 @@ Content-Type: application/json
   "parkingSpotName": "P2",
   "licensePlate": "XXX -DUPEK -XXX",
   "date": "2023-02-05T20:21:05.368Z"
+}
+
+###
+POST http://localhost:5020/reservations
+Content-Type: application/json
+
+{
+    "employeeName" : "Doktor Proktor",
+    "parkingSpotName": "P4",
+    "licensePlate": "JAJCOR69",
+    "date": "2023-02-05"
 }
