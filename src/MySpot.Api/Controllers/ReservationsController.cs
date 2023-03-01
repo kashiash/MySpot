@@ -63,7 +63,7 @@ public class ReservationsController : ControllerBase
         reservation.Id = _id;
         Reservations.Add(reservation);
         _id++;
-        return CreatedAtAction(nameof(Get),new {id = reservation.Id});
+        return CreatedAtAction(nameof(Get),new {id = reservation.Id},null);
     }
     [HttpPut("{id:int}")]
     public ActionResult Put(int id, Reservation reservation)
@@ -78,4 +78,16 @@ public class ReservationsController : ControllerBase
        return NoContent();
     }
 
+    [HttpDelete("{id:int}")]
+    public ActionResult Delete(int id)
+    {
+        var existingReservation =  Reservations.SingleOrDefault(x => x.Id == id);
+        if (existingReservation is null)
+        {
+            return NotFound();
+        }
+
+        Reservations.Remove(existingReservation);
+        return NoContent();
+    }
 }
