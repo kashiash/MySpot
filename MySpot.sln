@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AD98D502-57E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myspot.api", "src\myspot.api\myspot.api.csproj", "{2A6709A3-4CC4-41FB-9D0D-EB8DDF0030F8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serwajsy", "Serwajsy", "{1AB53259-7AD4-48E2-BAAE-D61CD4E0351D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
