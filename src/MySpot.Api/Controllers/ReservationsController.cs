@@ -1,3 +1,4 @@
+using System.Buffers.Text;
 using Microsoft.AspNetCore.Mvc;
 using myspot.api.Commands;
 using myspot.api.Entities;
@@ -41,10 +42,9 @@ public class ReservationsController : ControllerBase
         return CreatedAtAction(nameof(Get), new { id} , null);
 }
     [HttpPut("{id:int}")]
-    public ActionResult Put(Guid id, Reservation reservation)
+    public ActionResult Put(Guid id, ChangeLicensePlate command)
     {
-        reservation.Id = id;
-        if (_serwajs.Update(reservation))
+        if (_serwajs.Update(command with { ReservationId = id }))
         {
             return NoContent();
         }
@@ -55,10 +55,12 @@ public class ReservationsController : ControllerBase
     [HttpDelete("{id:guid}")]
     public ActionResult Delete(Guid id)
     {
-        if (_serwajs.Delete(id))
+        if (_serwajs.Delete(new DeleteReservation(id)))
         {
             return NoContent();
         }
         return NotFound();
     }
+    
+ 
 }

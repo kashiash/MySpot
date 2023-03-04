@@ -30,11 +30,40 @@ public class WeeklyParkingSpot
         }
         
         var reservationAlreadyExists = Reservations.Any(x =>
-            x.ParkingSpotName == reservation.ParkingSpotName && x.Date.Date == reservation.Date.Date);
+            x.ParkingSpotId == reservation.ParkingSpotId && x.Date.Date == reservation.Date.Date);
 
         if (reservationAlreadyExists)
         {
-            throw new ParkingSpotAlreadyReservedException(reservation.ParkingSpotName,reservation.Date);
+            throw new ParkingSpotAlreadyReservedException(Name,reservation.Date);
         }
+    }
+    public bool RemoveReservation(Guid reservationId)
+    {
+        var reservation = Reservations.SingleOrDefault(x => x.Id == reservationId);
+        if (reservation is null)
+        {
+            return false;
+        }
+
+    
+
+        return _reservations.Remove(reservation);
+    }
+    
+    public bool UpdateReservation(Reservation reservation)
+    {
+        var existingReservation = Reservations.SingleOrDefault(x => x.Id == reservation.Id);
+        if (existingReservation is null)
+        {
+            return false;
+        }
+
+        if (existingReservation.Date < DateTime.UtcNow)
+        {
+            return false;
+        }
+
+        existingReservation.ChangeLicencePlate(reservation.LicensePlate);
+        return true;
     }
 }
