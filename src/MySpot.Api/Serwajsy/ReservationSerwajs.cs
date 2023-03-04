@@ -1,5 +1,5 @@
 using myspot.api.Commands;
-using myspot.api.Entities;
+using MySpot.Api.Entities;
 
 namespace myspot.api.Serwajsy;
 

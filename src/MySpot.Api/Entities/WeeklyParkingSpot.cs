@@ -1,6 +1,6 @@
-using MySpot.api.Exceptions;
+using MySpot.Api.Exceptions;
 
-namespace myspot.api.Entities;
+namespace MySpot.Api.Entities;
 
 public class WeeklyParkingSpot
 {
@@ -36,6 +36,7 @@ public class WeeklyParkingSpot
         {
             throw new ParkingSpotAlreadyReservedException(Name,reservation.Date);
         }
+        _reservations.Add(reservation);
     }
     public bool RemoveReservation(Guid reservationId)
     {

@@ -1,4 +1,4 @@
-namespace myspot.api.Entities;
+namespace MySpot.Api.Entities;
 
 public class ReservationDto
 {

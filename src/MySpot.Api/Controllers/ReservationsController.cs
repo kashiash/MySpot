@@ -1,7 +1,7 @@
 using System.Buffers.Text;
 using Microsoft.AspNetCore.Mvc;
 using myspot.api.Commands;
-using myspot.api.Entities;
+using MySpot.Api.Entities;
 using myspot.api.Serwajsy;
 
 namespace myspot.api.Controllers;

@@ -1,4 +1,4 @@
-namespace MySpot.api.Exceptions;
+namespace MySpot.Api.Exceptions;
 
 public sealed class InvalidReservationDateException : CustomException
 {
